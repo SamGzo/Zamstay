@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: Zamstay
+    runtime: node
+    repo: https://github.com/SamGzo/Zamstay
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npx next start -p $PORT
+    envVars:
+      - key: ADMIN_KEY
+        sync: false
